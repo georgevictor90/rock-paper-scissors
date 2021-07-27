@@ -1,48 +1,72 @@
-// Create array with available choices
+// Create function computerPlay
 
-const choice = ['rock', 'paper', 'scissors'];
-console.log(choice);
-
-// Create a function for the computer's play to randomly select rock, paper or scissors and store it in variable
-
-let computerPlay = choice[ Math.floor (Math.random() * choice.length )];
-   console.log(computerPlay);
-
-
-// Create a variable that stores the user's input called playerSelection
-
-let playerSelection = prompt('Choose: ', 'rock, paper or scissors?' );
-
-
-
-if (playerSelection == null) {
-  alert('Please write a valid term("rock", "paper" or "scissors")')
+function computerPlay() {
+  let choice = ['rock', 'paper', 'scissors']
+  return choice[Math.floor (Math.random() * choice.length)]
 }
-  else if (playerSelection.toLowerCase() == 'rock') {
-    if (computerPlay == 'paper') { 
-        alert('You lose! Paper beats rock!')
-    } else if (computerPlay == 'scissors') {
-        alert('You win! Rock beats scissors!')
-    } else {
-        alert('Draw! Computer also chose rock!')} 
 
-} else if (playerSelection.toLowerCase() == 'paper') {
-    if (computerPlay == 'rock') {
-        alert('You win! Paper beats rock!')
-    } else if (computerPlay == 'scissors') {
-        alert('You lose! Scissors beats paper!')
-    } else {
-        alert('Draw! Computer also chose paper!')
-    }
 
-} else if (playerSelection.toLowerCase() == 'scissors') {
-    if (computerPlay == 'rock') {
-      alert('You lose! Rock beats scissors')
-    } else if (computerPlay == 'paper') {
-      alert('You win! Scissors beats paper!')
-    } else {
-      alert('Draw! Computer also chose scissors!')
-    }
 
-} else { 
-  alert('Please write a valid term("rock", "paper" or "scissors")')};
+
+//Create function playRound(playerSelection, computerSelection) -- make playerSelection case insensitive
+//also return the results of playRound
+
+let computerSelection = computerPlay();
+
+let playerScore = 0 ;
+let computerScore = 0;
+
+function playRound() {
+  
+  let playerSelection=prompt('Choose "rock", "paper" or "scissors" ');
+
+  if     (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors' || 
+          playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock'  ||
+          playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
+            playerScore += 1
+            alert('YOU WIN! COMPUTER CHOSE ' + computerSelection.toUpperCase() + '. ' + playerSelection.toUpperCase() + ' BEATS ' + computerSelection.toUpperCase() + '! Player score: ' + playerScore + ' , Computer score: ' + computerScore + ' .'  )
+     }
+
+  else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock' || 
+           playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper'  ||
+           playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
+            computerScore += 1
+            alert('YOU LOSE! COMPUTER CHOSE ' + computerSelection.toUpperCase() + '. ' + computerSelection.toUpperCase() + ' BEATS ' + playerSelection.toUpperCase() + '! Player score: ' + playerScore + ' , Computer score: ' + computerScore + ' .'  )
+  }
+
+  else if (playerSelection.toLowerCase() == computerSelection) {
+    alert('TIE GAME! TRY AGAIN! Player score: ' + playerScore + ' , Computer score: ' + computerScore + ' .'  )
+  }
+
+  else {
+    alert('PLEASE CHOOSE ROCK, PAPER OR SCISSORS')
+  }
+
+  
+}
+
+
+
+
+// Create function game() that loops playRound five times
+
+function game() {
+  playRound()
+  playRound()
+  playRound()
+  playRound()
+  playRound()
+  if (playerScore > computerScore) {
+    alert('Congratulations! You won the game! Final score - player: ' + playerScore + ', computer: ' + computerScore + '. Refresh the page to play again!')
+  }
+
+  else if (playerScore  < computerScore) {
+    alert('You lost! Try again! Final score - player:' + playerScore + ', computer: ' + computerScore + '. Refresh the page to play again!')
+  }
+
+  else {
+    alert('Tie Game! Final score - player:' + playerScore + ', computer: ' + computerScore + '. Refresh the page to play again!')
+  }
+}
+
+game()
