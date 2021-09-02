@@ -1,0 +1,160 @@
+/* add media queries, make responsive  */
+
+
+html {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  background-image: url("background.jpg");
+}
+
+
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  min-height: 500px;
+  margin: auto;
+  border: 10px solid rgb(166, 84, 233);
+  background: url('background.png');
+  border-radius: 20px;
+}
+
+.header > h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem;
+  color: rgb(166, 84, 233);
+  text-align: center;
+  
+}
+
+.header > p {
+  font-size:2rem;
+  text-align: center;
+  color: #f8f8ff;
+  
+  
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding:10px;
+  width: 90%;
+  height: auto;
+  background-color: rgba(75, 35, 168, 0.2);
+  border: 2px solid #f8f8ff;
+  border-radius: 20px;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: auto;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(166, 84, 233);
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+}
+
+
+
+.btn > img {
+  max-width: 60%;
+  height: auto;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+  margin: 5px;
+}
+
+#msg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#resetBtn {
+  height: 50px;
+  width: 150px;
+  font-size: 1.5rem;
+}
+
+.message {
+margin: 10px auto;
+width: 90%;
+}
+
+.message > p {
+  color: #97D6EC;
+  text-shadow: 1px 1px 1px rgb(66, 66, 66);
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.results {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+
+}
+
+.infoScores {
+  color: #97D6EC;
+  text-shadow: 1px 1px 1px rgb(66, 66, 66);
+  font-size: 2.5rem;
+}
+
+#playerScore {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  width: 49%;
+  border-right: 1px solid #f8f8ff;
+  border-top: 1px solid #f8f8ff;
+  border-bottom: 1px solid #f8f8ff;
+}
+
+#computerScore {
+display: flex;
+align-items: center;
+justify-content: space-around;
+box-sizing: border-box;
+height: 50px;
+width: 49%;
+border-left: 1px solid #f8f8ff;
+border-top: 1px solid #f8f8ff;
+border-bottom: 1px solid #f8f8ff;
+}
+
+@media only screen and (max-width: 450px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+  .results {
+    font-size: 0.9rem;
+  }
+}

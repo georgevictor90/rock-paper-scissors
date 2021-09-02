@@ -5,9 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
   
+<div class="container" id="container">
+  
+    <div class="header">
+      <p>Will you beat the computer in a game of 5 rounds of Rock Paper Scissors?</p>
+      <h1>Choose your champion!</h1>
+    </div>
+    
+    <div class="buttons" id="btn-container">
+      <button class="btn" id="rock" value="rock"><img src="rock.png"  alt="rock">Rock</button>
+      <button class="btn" id="paper" value="paper"><img src="file.png"  alt="paper">Paper</button>
+      <button class="btn" id="scissors" value="scissors"><img src="scissors.png"  alt="scissors">Scissors</button>
+    </div>
+    
+    <div class="message" id="msg-container">
+      <p id="message">Press any of the three buttons above to select your champion! Good Luck!</p>
+    </div>
+    
+    <div class="results" id="results">
+
+      <div class="score" id="playerScore">
+        <p class="infoScores" id="infoPScore">Player: 0</p>
+      </div>
+      
+      <div class="score" id="computerScore">
+        <p class="infoScores" id="infoCScore">Computer: 0</p>
+      </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
