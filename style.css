@@ -157,4 +157,7 @@ border-bottom: 1px solid #f8f8ff;
   .results {
     font-size: 0.9rem;
   }
+  .infoScores {
+    font-size: 1.5rem;
+  }
 }
